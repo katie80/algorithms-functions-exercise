@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Same Values Comparison</title>
+</head>
+<body>
+<script>
+	// 6. Write a function which takes in two arrays and determines if they contain the same number of the same values.
+	// [], [] -> true
+	// [2, 3, 4], [1, 2, 3] -> false
+	// ["a", "c", "b"], ["a", "b", "c"] -> true
+	// [1, 1, 1], [1, 1, 1, 1] -> false
+
+	// one array1[i] and the other array2[k]
+	// iterate through k against i, seeing if anything is the same
+	// if it's the same, .push the i into a new array and push the k into a new array
+
+
+	var array1 = [1, 1, 1, 4];
+	var array2 = [1, 4, 1, 1];
+
+	function compArr(arr1, arr2) {
+	
+		if (arr1.length != arr2.length) {
+			console.log(false);
+		} else {
+			arr1 = arr1.sort();
+			arr2 = arr2.sort();
+			console.log(arr1);
+			console.log(arr2);
+			for (i = 0; i < arr1.length; i++) {
+				for (k = 0; k < arr2.length; k++) {
+					if (arr1[i] == arr2[k]) {
+						console.log(true);
+						return true;
+					}
+				}
+			}
+		}
+	}
+
+	compArr(array1, array2);
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

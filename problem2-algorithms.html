@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Leap Year</title>
+</head>
+<body>
+<script>
+
+		var year = prompt("Enter a year and I'll tell you if it's a leap year.");
+
+		function leapYear(year) {
+			if (year == "" || year == NaN || year == null) {
+				alert ("Okay, you did not enter a year.");
+			} else if (year % 4 !== 0) {
+				alert("That is not a leap year.");
+			} else if (year % 100 !== 0) {
+				alert("Yep, that's a leap year.")
+			} else if (year % 400 !== 0) {
+				alert("That's definitely not a leap year.");
+			} else {
+				alert("That's definitely a leap year.");
+			}
+		}
+		leapYear(year);
+
+</script>
+</body>
+</html>
+
+<!-- if (year is not divisible by 4) then (it is a common year)
+else if (year is not divisible by 100) then (it is a leap year)
+else if (year is not divisible by 400) then (it is a common year)
+else (it is a leap year) -->

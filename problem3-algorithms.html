@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Missing Array Value</title>
+</head>
+<body>
+<script>
+	
+	// 3. Write a function which takes an array of integers > 0 and returns the first integer which does not appear in that array.
+	// [1,2,5] -> 3
+	// [1,2,3,4,5] -> 6
+	// [3,4,5] -> 1
+
+	var array = [1, 2, 3, 4, 6, 8];
+
+	for (var i = 0; i < array.length; i++) {
+		if (array[i] + 1 !== array[i + 1]) {
+			console.log(array[i] + 1);
+			break;
+		}
+	}
+
+</script>
+</body>
+</html>

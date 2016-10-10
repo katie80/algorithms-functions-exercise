@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Igpay Atinlay</title>
+	<script src="http://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<input type="text" id="englishInput">
+	<button id="btn1" onclick="engToPigLatin()">Submit English</button>
+	<div id="pigLatinOutput"></div>
+
+	<br>
+
+	<input type="text" id="pigLatin">
+	<button id="btn2" onclick="igpayToEnglish()">Ubmitsay Igpay Atinlay</button>
+	<div id="englishOutput"></div>
+
+
+
+
+
+
+<script>
+
+	$('#englishInput').keyup(function(evt) {
+		if (evt.keyCode === 13) {
+			engToPigLatin();
+		}
+	});
+
+	function engToPigLatin() {
+
+		var english = document.getElementById("englishInput").value;
+
+		english = english.toLowerCase();
+
+		var engArr = [];
+
+		engArr = english.split(" ");
+		
+		for (i = 0; i < engArr.length; i++) {
+
+			engArr[i] = engArr[i].substr(1, engArr[i].length) + engArr[i].substr(0, 1) + "ay ";
+
+		}
+
+		english = engArr.join(" ");
+
+		document.getElementById("pigLatinOutput").innerHTML = english;
+	}
+
+
+	$('#pigLatin').keyup(function(evt) {
+		if (evt.keyCode === 13) {
+			igpayToEnglish();
+		}
+	});
+
+
+	function igpayToEnglish(igpay) {
+
+		var igpay = document.getElementById("pigLatin").value;
+
+		igpay = igpay.toLowerCase();
+
+		var pigLatin = [];
+
+		pigLatin = igpay.split(" ");
+
+		for (i = 0; i < pigLatin.length; i++) {
+
+			pigLatin[i] = pigLatin[i].substr(pigLatin[i].length - 3, 1) + pigLatin[i].substr(0, pigLatin[i].length - 3);
+
+		}
+
+		igpay = pigLatin.join(" ");
+
+		document.getElementById("englishOutput").innerHTML = igpay;
+
+	}
+
+	igpayToEnglish(igpay);
+
+
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	var energy = fruits.join(" and ");
+	
+
+
+
+</script>
+</body>
+</html>
