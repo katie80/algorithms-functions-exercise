@@ -12,14 +12,19 @@
 	// [1,2,3,4,5] -> 6
 	// [3,4,5] -> 1
 
-	var array = [1, 2, 3, 4, 6, 8];
+	function missingNo(array) {
 
-	for (var i = 0; i < array.length; i++) {
-		if (array[i] + 1 !== array[i + 1]) {
-			console.log(array[i] + 1);
-			break;
+		for (var i = 0; i < array.length; i++) {
+			if (array[i] + 1 !== array[i + 1]) {
+				console.log(array[i] + 1);
+				break;
+			}
 		}
 	}
+
+	var thisArray = [1, 2, 3, 4, 6, 8];
+
+	missingNo(thisArray);
 
 </script>
 </body>
